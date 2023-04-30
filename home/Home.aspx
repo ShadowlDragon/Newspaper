@@ -18,6 +18,9 @@
                     <li><a href="entertainment.html">Entertainment</a></li>
                 </ul>
             </nav>
+            <div class="header-right">
+                <asp:Label ID="lblUsername" runat="server" ></asp:Label>
+            </div>
         </header>
         <main>
             <section class="top-stories">

@@ -6,9 +6,6 @@ namespace home
 {
     public partial class Signup : System.Web.UI.Page
     {
-        protected System.Web.UI.WebControls.TextBox UserName;
-        protected System.Web.UI.WebControls.TextBox PassWord;
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -19,25 +16,36 @@ namespace home
             string connectionString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string username = UserName.Text.Trim();
-                string password = PassWord.Text.Trim();
+                string username = txtUsername.Text.Trim();
+                string email = txtEmail.Text.Trim();
+                string password = txtPassword.Text.Trim();
+                string confirmPassword = txtConfirmPassword.Text.Trim();
 
-                string query = "SELECT * FROM UserInfo WHERE Username=@UserName AND Password=@Password";
+                if (password != confirmPassword)
+                {
+                    lblError.Text = "Passwords do not match.";
+                    return;
+                }
+
+                string query = "INSERT INTO UserInfo (Username, Email, Password) VALUES (@Username, @Email, @Password)";
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@UserName", username);
+                command.Parameters.AddWithValue("@Username", username);
+                command.Parameters.AddWithValue("@Email", email);
                 command.Parameters.AddWithValue("@Password", password);
 
                 connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.Read())
+                int rowsAffected = command.ExecuteNonQuery();
+
+                if (rowsAffected == 1)
                 {
-                    // Login successful, redirect to Home.aspx
-                    Response.Redirect("Home.aspx");
+                    // Sign-up successful
+                    Session["Notification"] = "Sign-up successful. Please log in.";
+                    Response.Redirect("Login.aspx");
                 }
                 else
                 {
-                    // Login failed, display error message
-                    lblError.Text = "Invalid username or password";
+                    // Sign-up failed
+                    lblError.Text = "Sign-up failed. Please try again.";
                 }
             }
         }

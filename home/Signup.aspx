@@ -92,14 +92,15 @@
 </head>
 <body>
 	<div class="container">
-		<form action="" method="POST" runat="server">
-				<h1>Sign Up</h1>
-				<asp:Label ID="lblError" runat="server" Text="" ForeColor="Red"></asp:Label>
-				<asp:TextBox ID="txtUsername" runat="server" placeholder="Username" CssClass="form-control" required></asp:TextBox>
-				<asp:TextBox ID="txtEmail" runat="server" placeholder="Email" CssClass="form-control" required></asp:TextBox>
-				<asp:TextBox ID="txtPassword" runat="server" placeholder="Password" CssClass="form-control" TextMode="Password" required></asp:TextBox>
-				<asp:TextBox ID="txtConfirmPassword" runat="server" placeholder="Confirm Password" CssClass="form-control" TextMode="Password" required></asp:TextBox>
-				<asp:Button ID="btnSignUp" runat="server" Text="Sign Up" />
+		<form id="formSignup" runat="server">
+			<h1>Sign Up</h1>
+			<asp:Label ID="lblNotification" runat="server" Text="" ForeColor="Green"></asp:Label>
+			<asp:Label ID="lblError" runat="server" Text="" ForeColor="Red"></asp:Label>
+			<asp:TextBox ID="txtUsername" runat="server" placeholder="Username" CssClass="form-control" required></asp:TextBox>
+			<asp:TextBox ID="txtEmail" runat="server" placeholder="Email" CssClass="form-control" required></asp:TextBox>
+			<asp:TextBox ID="txtPassword" runat="server" placeholder="Password" CssClass="form-control" TextMode="Password" required></asp:TextBox>
+			<asp:TextBox ID="txtConfirmPassword" runat="server" placeholder="Confirm Password" CssClass="form-control" TextMode="Password" required></asp:TextBox>
+			<asp:Button ID="btnSignUp" runat="server" Text="Sign Up" OnClick="UserSignup" />
 		</form>
 		<p>Already have an account? <a href="Login.aspx">Login now</a>.</p>
 	</div>
