@@ -18,9 +18,16 @@
             <a href="Home.aspx" class="logo"><h1>Newspaper Website</h1></a>
             <nav>
                 <ul>
-                    <li><a href="news.html">News</a></li>
+                    <li><a href="News.aspx">News</a></li>
                     <li><a href="Sport.aspx">Sports</a></li>
                     <li><a href="Entertainment.aspx">Entertainment</a></li>
+                    <li>
+                        <% if(Session["username"] == null) { %>
+                            <a href="Login.aspx">Sign In</a>
+                        <% } else { %>
+                            <a>Hi <%= Session["username"] %></a>
+                        <% } %>
+                    </li>
                 </ul>
             </nav>
         </header>

@@ -32,7 +32,8 @@ namespace home
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    // Login successful, redirect to Home.aspx
+                    // Login successful, set the username in the session and redirect to Home.aspx
+                    Session["username"] = username;
                     Response.Redirect("Home.aspx");
                 }
                 else
@@ -42,5 +43,6 @@ namespace home
                 }
             }
         }
+
     }
 }

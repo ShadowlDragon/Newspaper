@@ -11,11 +11,7 @@ namespace home
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Username"] != null)
-            {
-                string username = Session["Username"].ToString();
-                lblUsername.Text = "Hi, " + username;
-            }
+            
         }
 
     }

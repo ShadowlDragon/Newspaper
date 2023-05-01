@@ -22,6 +22,7 @@
                     <li><a href="News.aspx">News</a></li>
                     <li><a href="Sport.aspx">Sports</a></li>
                     <li><a href="Entertainment.aspx">Entertainment</a></li>
+                    <li><a href="Login.aspx">Sign In</a></li>
                 </ul>
             </nav>
         </header>
