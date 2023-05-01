@@ -10,7 +10,7 @@
 	<style>
 		body {
 			font-family: Arial, sans-serif;
-			background-color: #f1f1f1;
+			background-color: #FDE88A;
 		}
 
 		.container {
@@ -48,7 +48,7 @@
 		}
 
 		input[type="submit"] {
-			background-color: #4CAF50;
+			background-color: #146894;
 			color: #fff;
 			padding: 10px;
 			border: none;
@@ -57,7 +57,8 @@
 		}
 
 		input[type="submit"]:hover {
-			background-color: #3e8e41;
+			background-color: #3e658e;
+			transition: background-color 0.2s ease;
 		}
 
 		input {
@@ -81,7 +82,7 @@
 		}
 
 		a {
-			color: #4CAF50;
+			color: #146894;
 			text-decoration: none;
 		}
 

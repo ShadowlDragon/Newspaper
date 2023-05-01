@@ -1,4 +1,4 @@
-﻿/* Global styles */
+/* Global styles */
 
 body {
     font-family: Arial, sans-serif;
@@ -7,6 +7,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: #FDE88A;
 }
 
 h1,
@@ -25,7 +26,7 @@ h2 {
 /* Header styles */
 
 header {
-    background-color: #4CAF50;
+    background-color: #146894;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -52,6 +53,44 @@ header {
                 color: #fff;
                 text-decoration: none;
             }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    top: 42px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropbtn {
+    background-color: #146894;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    background-color: #146894;
+    width: 100%;
+}
+
+    .dropdown-content a:hover {
+        background-color: #3e658e;
+    }
 
 .logo {
     text-decoration: none;
@@ -99,7 +138,6 @@ article {
 
 .comments {
     margin-bottom: 20px;
-    padding-right: 20px;
     background-color: #f5f5f5;
     border-radius: 10px;
 }
@@ -107,12 +145,14 @@ article {
     .comments h4 {
         font-size: 18px;
         margin-bottom: 10px;
+        padding-left: 10px;
+        padding-top: 10px;
     }
 
 .comment-list {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 10px;
     width: 1;
 }
 
@@ -142,6 +182,7 @@ article {
 
 .comment-form {
     margin-top: 20px;
+    padding: 10px;
 }
 
     .comment-form label {
@@ -153,7 +194,7 @@ article {
     .comment-form input[type="text"],
     .comment-form textarea {
         display: block;
-        width: 100%;
+        width: 95%;
         padding: 10px;
         font-size: 16px;
         line-height: 1.5;
@@ -163,7 +204,7 @@ article {
     }
 
     .comment-form button[type="submit"] {
-        background-color: #4CAF50;
+        background-color: #146894;
         color: #fff;
         border: none;
         padding: 10px 20px;
@@ -289,7 +330,7 @@ article {
 /* Footer styles */
 
 footer {
-    background-color: #4CAF50;
+    background-color: #146894;
     color: #fff;
     text-align: center;
     padding: 20px;

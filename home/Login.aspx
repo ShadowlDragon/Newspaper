@@ -7,7 +7,7 @@
 	<title>Login Page</title>
 	<style>
 		body {
-			background-color: #f3f3f3;
+			background-color: #FDE88A;
 			font-family: Arial, sans-serif;
 			font-size: 16px;
 			margin: 0;
@@ -48,7 +48,7 @@
 		}
 
 		input[type="submit"] {
-			background-color: #4CAF50;
+			background-color: #146894;
 			border: none;
 			border-radius: 5px;
 			color: #fff; 
@@ -59,7 +59,7 @@
 		}
 
 		input[type="submit"]:hover {
-			background-color: #3e8e41;
+			background-color: #3e658e;
 			transition: background-color 0.2s ease;
 		}
 
@@ -80,7 +80,7 @@
 		}
 
 		a {
-			color: #4CAF50;
+			color: #146894;
 			text-decoration: none;
 		}
 
