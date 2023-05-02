@@ -25,9 +25,15 @@ namespace home
                     string title = reader.GetString(1);
                     string content = reader.GetString(2);
                     string postType = reader.GetString(3);
+                    long imageSize = reader.GetBytes(4, 0, null, 0, 0); // Get the size of the image data
+                    byte[] imageBytes = new byte[imageSize];
+                    reader.GetBytes(4, 0, imageBytes, 0, (int)imageSize); // Read the image data into the byte array
+
+                    string base64Image = Convert.ToBase64String(imageBytes);
 
                     string articleHTML = "<article id=\"" + postId + "\">" +
                                              "<h3>" + title + "</h3>" +
+                                             "<img src=\"data:image/png;base64," + base64Image + "\" />" +
                                              "<p>" + content + "</p>" +
                                              "<div class=\"comments\">" +
                                                  "<h4>Comments:</h4>" +
@@ -49,6 +55,7 @@ namespace home
                 reader.Close();
                 connection.Close();
             }
+
         }
     }
 }

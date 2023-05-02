@@ -36,6 +36,15 @@
           font-size: 1em;
         }
 
+        form textarea {
+          height: 100px; /* set an initial height */
+          resize: vertical; /* allow vertical resizing */
+        }
+
+        form textarea:focus {
+          height: auto; /* expand height when focused */
+        }
+
         form select {
           -webkit-appearance: none;
           -moz-appearance: none;
@@ -95,12 +104,13 @@
 			    <asp:Label ID="lblNotification" runat="server" Text="" ForeColor="Green"></asp:Label>
 			    <asp:Label ID="lblError" runat="server" Text="" ForeColor="Red"></asp:Label>
 			    <asp:TextBox ID="txtTitle" runat="server" placeholder="Title" required></asp:TextBox>
-			    <asp:TextBox ID="txtContent" runat="server" placeholder="Content" required></asp:TextBox>
+			    <asp:TextBox ID="txtContent" runat="server" placeholder="Content" TextMode="MultiLine" Rows="20" required></asp:TextBox>
                 <asp:DropDownList ID="ddlPostType" runat="server" CssClass="form-control" required>
                     <asp:ListItem Text="Lời của sách" Value="1"></asp:ListItem>
                     <asp:ListItem Text="Văn học và Nghệ thuật" Value="2"></asp:ListItem>
                     <asp:ListItem Text="Bình luận" Value="3"></asp:ListItem>
                 </asp:DropDownList>
+                <asp:FileUpload ID="imgUpload" runat="server" />
 			    <asp:Button ID="btnAddArticle" runat="server" Text="Add Article" OnClick="AddNewArticle" />
 		    </form>
 	    </div>

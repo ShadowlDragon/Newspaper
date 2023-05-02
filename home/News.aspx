@@ -47,7 +47,8 @@
         </nav>
     </header>
     <main>
-        <div runat="server" id="articleContainer" style="display: flex; flex-direction: column; align-items: center;"></div>
+        <h2>Lời của sách</h2>
+        <div runat="server" id="articleContainer"></div>
     </main>
     <footer>
         <p>© Báo Tháng Mười</p>

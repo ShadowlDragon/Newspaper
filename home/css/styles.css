@@ -21,6 +21,7 @@ h6 {
 
 h2 {
     text-align: center;
+    padding-bottom: 10px;
 }
 
 /* Header styles */
@@ -309,6 +310,10 @@ article {
     .article-img img {
         max-width: 100%;
     }
+
+img {
+    width: inherit;
+}
 
 #add-article-modal {
     display: none;

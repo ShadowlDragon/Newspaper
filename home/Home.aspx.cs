@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace home
 {
@@ -24,7 +20,7 @@ namespace home
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT TOP 1 * FROM POST WHERE PostType = 1";
+                string query = "SELECT TOP 1 * FROM POST WHERE PostType = 1 ORDER BY PostID DESC";
                 SqlCommand command = new SqlCommand(query, connection);
 
                 connection.Open();
@@ -56,7 +52,7 @@ namespace home
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT TOP 1 * FROM POST WHERE PostType = 2";
+                string query = "SELECT TOP 1 * FROM POST WHERE PostType = 2 ORDER BY PostID DESC";
                 SqlCommand command = new SqlCommand(query, connection);
 
                 connection.Open();
@@ -89,7 +85,7 @@ namespace home
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT TOP 1 * FROM POST WHERE PostType = 3";
+                string query = "SELECT TOP 1 * FROM POST WHERE PostType = 3 ORDER BY PostID DESC";
                 SqlCommand command = new SqlCommand(query, connection);
 
                 connection.Open();

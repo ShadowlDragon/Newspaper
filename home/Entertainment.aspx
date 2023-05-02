@@ -47,6 +47,7 @@
         </nav>
     </header>
     <main>
+        <h2>Bình luận</h2>
         <div runat="server" id="articleContainer"></div>
     </main>
     <footer>

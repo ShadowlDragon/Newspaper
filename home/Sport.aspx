@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Sport.aspx.cs" Inherits="home.Sport" %>
 
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,13 +12,6 @@
         integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
         crossorigin="anonymous"></script>
     <link href="css/styles.css" rel="stylesheet" />
-    <style>
-        articleContainer {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-    </style>
     <title>Văn học và Nghệ thuật</title>
 </head>
 <body>
@@ -53,6 +47,7 @@
         </nav>
     </header>
     <main>
+        <h2>Văn học và Nghệ thuật</h2>
         <div runat="server" id="articleContainer"></div>
     </main>
     <footer>
