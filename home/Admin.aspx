@@ -64,7 +64,7 @@
 <body>
     <header>
         <a href="Home.aspx" class="logo">
-            <h1>Newspaper Website</h1>
+            <h1>Báo Tháng Mười</h1>
         </a>
         <nav>
             <ul>
@@ -105,7 +105,7 @@
 		    </form>
 	    </div>
     <footer>
-        <p>© Báo Tháng Mười 2023</p>
+        <p>© Báo Tháng Mười</p>
     </footer>
     <script>
         

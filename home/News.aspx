@@ -17,7 +17,7 @@
 <body>
     <header>
         <a href="Home.aspx" class="logo">
-            <h1>Newspaper Website</h1>
+            <h1>Báo Tháng Mười</h1>
         </a>
         <nav>
             <ul>
@@ -25,7 +25,13 @@
                 <li><a href="Sport.aspx">Văn học và Nghệ thuật</a></li>
                 <li><a href="Entertainment.aspx">Bình luận</a></li>
                 <li>
-                    <div class="dropdown" runat="server" visible='<%# Session["username"] != null %>'>
+                    <% if (Session["username"] == null)
+                        { %>
+                    <a href="Login.aspx">Login</a>
+                    <% }
+                    else
+                    { %>
+                    <div class="dropdown">
                         <a class="dropbtn">Hi <%= Session["username"] %></a>
                         <div class="dropdown-content">
                             <% if (Session["username"].ToString() == "admin")
@@ -35,14 +41,16 @@
                             <a href="Logout.aspx">Logout</a>
                         </div>
                     </div>
-                    <a href="Login.aspx" runat="server" visible='<%# Session["username"] == null %>'>Login</a>
+                    <% } %>
                 </li>
             </ul>
         </nav>
     </header>
-    <main  id="articles-container"></main>
+    <main>
+        <div runat="server" id="articleContainer" style="display: flex; flex-direction: column; align-items: center;"></div>
+    </main>
     <footer>
-        <p>© Báo Tháng Mười 2023</p>
+        <p>© Báo Tháng Mười</p>
     </footer>
     <script src="js/JavaScript.js"></script>
 </body>

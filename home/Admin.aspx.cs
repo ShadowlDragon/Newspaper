@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Web.UI.WebControls;
 
 namespace home
 {
@@ -21,7 +20,7 @@ namespace home
                 string content = txtContent.Text.Trim();
                 string postType = ddlPostType.SelectedValue;
 
-                string query = "INSERT INTO POST (Title, Content, PostType) VALUES (N'+str@Title+"',N' + str@Content + "', N'+str@PostType+"')";
+                string query = "INSERT INTO POST (Title, Content, PostType) VALUES (@Title, @Content, @PostType)";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Title", title);
                 command.Parameters.AddWithValue("@Content", content);

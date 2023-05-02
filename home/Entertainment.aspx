@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Entertainment.aspx.cs" Inherits="home.Entertainment" %>
 
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,7 +17,7 @@
 <body>
     <header>
         <a href="Home.aspx" class="logo">
-            <h1>Newspaper Website</h1>
+            <h1>Báo Tháng Mười</h1>
         </a>
         <nav>
             <ul>
@@ -24,7 +25,13 @@
                 <li><a href="Sport.aspx">Văn học và Nghệ thuật</a></li>
                 <li><a href="Entertainment.aspx">Bình luận</a></li>
                 <li>
-                    <div class="dropdown" runat="server" visible='<%# Session["username"] != null %>'>
+                    <% if (Session["username"] == null)
+                        { %>
+                    <a href="Login.aspx">Login</a>
+                    <% }
+                    else
+                    { %>
+                    <div class="dropdown">
                         <a class="dropbtn">Hi <%= Session["username"] %></a>
                         <div class="dropdown-content">
                             <% if (Session["username"].ToString() == "admin")
@@ -34,34 +41,16 @@
                             <a href="Logout.aspx">Logout</a>
                         </div>
                     </div>
-                    <a href="Login.aspx" runat="server" visible='<%# Session["username"] == null %>'>Login</a>
+                    <% } %>
                 </li>
             </ul>
         </nav>
     </header>
     <main>
-        <section>
-            <h2>Bình luận</h2>
-            <article id="article-1">
-                <h3>Article Title 1</h3>
-                <p>Article Content 1</p>
-                <div class="comments">
-                    <h4>Comments:</h4>
-                    <ul class="comment-list" id="comments-1"></ul>
-                    <form class="comment-form" id="comment-form-1">
-                        <input type="text" placeholder="Add a comment" />
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
-                <div class="likes">
-                    <button class="like-btn"><i class="fas fa-heart"></i></button>
-                    <span class="like-count">0</span>
-                </div>
-            </article>
-        </section>
+        <div runat="server" id="articleContainer"></div>
     </main>
     <footer>
-        <p>© Báo Tháng Mười 2023</p>
+        <p>© Báo Tháng Mười</p>
     </footer>
     <script src="js/JavaScript.js"></script>
 </body>
