@@ -79,15 +79,21 @@ header {
     border: none;
     cursor: pointer;
     padding-bottom: 33px;
+    padding-left: 60px;
 }
 
 .dropdown-content a {
     color: white;
     padding: 10px;
+    position: relative;
     text-decoration: none;
-    display: block;
+    display: flex;
+    /* display: block; */
     background-color: #146894;
     width: 100%;
+    top: 8px;
+    align-items: center;
+    justify-content: center;
 }
 
     .dropdown-content a:hover {

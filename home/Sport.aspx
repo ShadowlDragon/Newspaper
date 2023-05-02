@@ -29,8 +29,8 @@
                         { %>
                     <a href="Login.aspx">Login</a>
                     <% }
-                    else
-                    { %>
+                        else
+                        { %>
                     <div class="dropdown">
                         <a class="dropbtn">Hi <%= Session["username"] %></a>
                         <div class="dropdown-content">

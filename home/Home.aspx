@@ -3,15 +3,20 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <title>Báo Tháng Mười</title>
-        <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body>
-        <header>
-            <a href="Home.aspx" class="logo"><h1>Báo Tháng Mười</h1></a>
-            <nav>
+<head>
+    <title>Báo Tháng Mười</title>
+    <script defer
+        src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+        integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+        crossorigin="anonymous"></script>
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="Home.aspx" class="logo">
+            <h1>Báo Tháng Mười</h1>
+        </a>
+        <nav>
             <ul>
                 <li><a href="News.aspx">Lời của sách</a></li>
                 <li><a href="Sport.aspx">Văn học và Nghệ thuật</a></li>
@@ -21,8 +26,8 @@
                         { %>
                     <a href="Login.aspx">Login</a>
                     <% }
-                    else
-                    { %>
+                        else
+                        { %>
                     <div class="dropdown">
                         <a class="dropbtn">Hi <%= Session["username"] %></a>
                         <div class="dropdown-content">
@@ -37,16 +42,16 @@
                 </li>
             </ul>
         </nav>
-        </header>
-        <main>
-            <h2>Top Stories</h2>
-            <div runat="server" id="articleContainer1"></div>
-            <div runat="server" id="articleContainer2"></div>
-            <div runat="server" id="articleContainer3"></div>
-        </main>
-        <footer>
-            <p>© Báo Tháng Mười</p>
-        </footer>
-        <script src="js/JavaScript.js"></script>
-    </body>
+    </header>
+    <main>
+        <h2>Top Stories</h2>
+        <div runat="server" id="articleContainer1"></div>
+        <div runat="server" id="articleContainer2"></div>
+        <div runat="server" id="articleContainer3"></div>
+    </main>
+    <footer>
+        <p>© Báo Tháng Mười</p>
+    </footer>
+    <script src="js/JavaScript.js"></script>
+</body>
 </html>
