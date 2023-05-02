@@ -24,7 +24,7 @@ namespace home
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT * FROM POST WHERE PostType = 1";
+                string query = "SELECT TOP 1 * FROM POST WHERE PostType = 1";
                 SqlCommand command = new SqlCommand(query, connection);
 
                 connection.Open();
@@ -34,11 +34,13 @@ namespace home
                     int postId = reader.GetInt32(0);
                     string title = reader.GetString(1);
                     string content = reader.GetString(2);
-                    string postType = reader.GetString(3);
+                    // Get the first 50 words of the content
+                    string summary = string.Join(" ", content.Split().Take(50));
 
                     string articleHTML = "<article id=\"" + postId + "\">" +
                                              "<h3>" + title + "</h3>" +
-                                             "<p>" + content + "</p>" +
+                                             "<p>" + summary + "</p>" +
+                                             "<a href=\"News.aspx?id=" + postId + "\">See More</a>" +
                                          "</article>";
 
                     articleContainer1.InnerHtml += articleHTML;
@@ -54,7 +56,7 @@ namespace home
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT * FROM POST WHERE PostType = 2";
+                string query = "SELECT TOP 1 * FROM POST WHERE PostType = 2";
                 SqlCommand command = new SqlCommand(query, connection);
 
                 connection.Open();
@@ -64,11 +66,14 @@ namespace home
                     int postId = reader.GetInt32(0);
                     string title = reader.GetString(1);
                     string content = reader.GetString(2);
-                    string postType = reader.GetString(3);
+                    // Get the first 50 words of the content
+                    string summary = string.Join(" ", content.Split().Take(50));
+
 
                     string articleHTML = "<article id=\"" + postId + "\">" +
                                              "<h3>" + title + "</h3>" +
-                                             "<p>" + content + "</p>" +
+                                             "<p>" + summary + "</p>" +
+                                             "<a href=\"Entertainmnet.aspx?id=" + postId + "\">See More</a>" +
                                          "</article>";
 
                     articleContainer2.InnerHtml += articleHTML;
@@ -84,7 +89,7 @@ namespace home
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT * FROM POST WHERE PostType = 3";
+                string query = "SELECT TOP 1 * FROM POST WHERE PostType = 3";
                 SqlCommand command = new SqlCommand(query, connection);
 
                 connection.Open();
@@ -94,11 +99,13 @@ namespace home
                     int postId = reader.GetInt32(0);
                     string title = reader.GetString(1);
                     string content = reader.GetString(2);
-                    string postType = reader.GetString(3);
+                    // Get the first 50 words of the content
+                    string summary = string.Join(" ", content.Split().Take(50));
 
                     string articleHTML = "<article id=\"" + postId + "\">" +
                                              "<h3>" + title + "</h3>" +
-                                             "<p>" + content + "</p>" +
+                                             "<p>" + summary + "</p>" +
+                                             "<a href=\"Sport.aspx?id=" + postId + "\">See More</a>" +
                                          "</article>";
 
                     articleContainer3.InnerHtml += articleHTML;
