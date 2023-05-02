@@ -14,7 +14,7 @@ namespace home
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT * FROM POST WHERE PostType = 1";
+                string query = "SELECT * FROM POST WHERE PostType = 1 ORDER BY PostID DESC";
                 SqlCommand command = new SqlCommand(query, connection);
 
                 connection.Open();
@@ -25,15 +25,20 @@ namespace home
                     string title = reader.GetString(1);
                     string content = reader.GetString(2);
                     string postType = reader.GetString(3);
-                    long imageSize = reader.GetBytes(4, 0, null, 0, 0); // Get the size of the image data
-                    byte[] imageBytes = new byte[imageSize];
-                    reader.GetBytes(4, 0, imageBytes, 0, (int)imageSize); // Read the image data into the byte array
 
-                    string base64Image = Convert.ToBase64String(imageBytes);
+                    byte[] imageBytes = null;
+                    string base64Image = null;
+                    if (!reader.IsDBNull(4)) // Check if the image column is not null
+                    {
+                        long imageSize = reader.GetBytes(4, 0, null, 0, 0); // Get the size of the image data
+                        imageBytes = new byte[imageSize];
+                        reader.GetBytes(4, 0, imageBytes, 0, (int)imageSize); // Read the image data into the byte array
+                        base64Image = Convert.ToBase64String(imageBytes);
+                    }
 
                     string articleHTML = "<article id=\"" + postId + "\">" +
                                              "<h3>" + title + "</h3>" +
-                                             "<img src=\"data:image/png;base64," + base64Image + "\" />" +
+                                             (!string.IsNullOrEmpty(base64Image) ? "<img src=\"data:image/png;base64," + base64Image + "\" />" : "") +
                                              "<p>" + content + "</p>" +
                                              "<div class=\"comments\">" +
                                                  "<h4>Comments:</h4>" +
@@ -47,7 +52,7 @@ namespace home
                                                  "<button class=\"like-btn\"><i class=\"fas fa-heart\"></i></button>" +
                                                  "<span class=\"like-count\">0</span>" +
                                              "</div>" +
-                                         "</article>";
+                                             "</article>";
 
                     articleContainer.InnerHtml += articleHTML;
                 }

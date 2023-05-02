@@ -22,8 +22,8 @@
         <nav>
             <ul>
                 <li><a href="News.aspx">Lời của sách</a></li>
-                <li><a href="Sport.aspx">Văn học và Nghệ thuật</a></li>
-                <li><a href="Entertainment.aspx">Bình luận</a></li>
+                <li><a href="Entertainment.aspx">Văn học và Nghệ thuật</a></li>
+                <li><a href="Sport.aspx">Bình luận</a></li>
                 <li>
                     <% if (Session["username"] == null)
                         { %>
@@ -47,7 +47,7 @@
         </nav>
     </header>
     <main>
-        <h2>Bình luận</h2>
+        <h2>Văn học và Nghệ thuật</h2>
         <div runat="server" id="articleContainer"></div>
     </main>
     <footer>

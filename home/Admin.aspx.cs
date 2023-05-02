@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 
@@ -16,19 +17,29 @@ namespace home
                 string content = txtContent.Text.Trim();
                 string postType = ddlPostType.SelectedValue;
 
-                // Get the filename of the uploaded image
+                // Get the filename of the uploaded image (if any)
                 string filename = Path.GetFileName(imgUpload.FileName);
                 string path = Server.MapPath("~/images/") + filename;
-                imgUpload.SaveAs(path);
-
-                byte[] bytes = File.ReadAllBytes(path);
+                byte[] bytes = null;
+                if (!string.IsNullOrEmpty(filename))
+                {
+                    imgUpload.SaveAs(path);
+                    bytes = File.ReadAllBytes(path);
+                }
 
                 string query = "INSERT INTO POST (Title, Content, PostType, Image) VALUES (@Title, @Content, @PostType, @Image)";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Title", title);
                 command.Parameters.AddWithValue("@Content", content);
                 command.Parameters.AddWithValue("@PostType", postType);
-                command.Parameters.AddWithValue("@Image", bytes);
+                if (bytes != null)
+                {
+                    command.Parameters.AddWithValue("@Image", bytes);
+                }
+                else
+                {
+                    command.Parameters.Add("@Image", SqlDbType.VarBinary, -1).Value = DBNull.Value;
+                }
 
                 connection.Open();
                 int rowsAffected = command.ExecuteNonQuery();
@@ -46,7 +57,5 @@ namespace home
                 }
             }
         }
-
-
     }
 }
