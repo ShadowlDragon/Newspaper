@@ -73,7 +73,7 @@ namespace home
                     string articleHTML = "<article id=\"" + postId + "\">" +
                                              "<h3>" + title + "</h3>" +
                                              "<p>" + summary + "</p>" +
-                                             "<a href=\"Entertainmnet.aspx?id=" + postId + "\">See More</a>" +
+                                             "<a href=\"Entertainment.aspx?id=" + postId + "\">See More</a>" +
                                          "</article>";
 
                     articleContainer2.InnerHtml += articleHTML;
