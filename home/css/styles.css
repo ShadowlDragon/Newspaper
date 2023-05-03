@@ -79,7 +79,8 @@ header {
     border: none;
     cursor: pointer;
     padding-bottom: 33px;
-    padding-left: 60px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 .dropdown-content a {

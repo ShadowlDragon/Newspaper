@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -8,6 +9,17 @@ namespace home
 {
     public partial class Admin : System.Web.UI.Page
     {
+        public class Article
+        {
+            public int PostID { get; set; }
+            public string Title { get; set; }
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            
+        }
+
         protected void AddNewArticle(object sender, EventArgs e)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;

@@ -33,7 +33,8 @@
                         <div class="dropdown-content">
                             <% if (Session["username"].ToString() == "admin")
                                 { %>
-                            <a href="Admin.aspx">Go to Admin Page</a>
+                            <a href="Admin.aspx">Add Article</a>
+                            <a href="AllArticle.aspx">Delete Article</a>
                             <% } %>
                             <a href="Logout.aspx">Logout</a>
                         </div>
