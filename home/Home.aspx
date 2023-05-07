@@ -34,7 +34,6 @@
                             <% if (Session["username"].ToString() == "admin")
                                 { %>
                             <a href="Admin.aspx">Add Article</a>
-                            <a href="AllArticle.aspx">Delete Article</a>
                             <% } %>
                             <a href="Logout.aspx">Logout</a>
                         </div>
