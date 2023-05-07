@@ -90,7 +90,6 @@
                     <div class="dropdown">
                         <a class="dropbtn">Hi <%= Session["username"] %></a>
                         <div class="dropdown-content">
-                            <a href="AllArticle.aspx">Delete Article</a>
                             <a href="Logout.aspx">Logout</a>
                         </div>
                     </div>
