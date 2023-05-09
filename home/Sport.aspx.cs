@@ -54,7 +54,7 @@ namespace home
                                              "</div>" +
                                              "</article>";
 
-                    articleContainer.InnerHtml += articleHTML;
+                    articleContainer.InnerHtml += articleHTML.Replace("\r\n", "<br />").Replace("\n", "<br />");
                 }
 
                 reader.Close();

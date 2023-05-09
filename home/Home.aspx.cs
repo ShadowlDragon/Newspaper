@@ -39,7 +39,7 @@ namespace home
                                              "<a href=\"News.aspx?id=" + postId + "\">See More</a>" +
                                          "</article>";
 
-                    articleContainer1.InnerHtml += articleHTML;
+                    articleContainer1.InnerHtml += articleHTML.Replace("\r\n", "<br />").Replace("\n", "<br />");
                 }
 
                 reader.Close();
@@ -72,7 +72,7 @@ namespace home
                                              "<a href=\"Entertainment.aspx?id=" + postId + "\">See More</a>" +
                                          "</article>";
 
-                    articleContainer2.InnerHtml += articleHTML;
+                    articleContainer2.InnerHtml += articleHTML.Replace("\r\n", "<br />").Replace("\n", "<br />");
                 }
 
                 reader.Close();
@@ -104,7 +104,7 @@ namespace home
                                              "<a href=\"Sport.aspx?id=" + postId + "\">See More</a>" +
                                          "</article>";
 
-                    articleContainer3.InnerHtml += articleHTML;
+                    articleContainer3.InnerHtml += articleHTML.Replace("\r\n", "<br />").Replace("\n", "<br />");
                 }
 
                 reader.Close();
