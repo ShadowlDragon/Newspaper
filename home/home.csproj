@@ -74,6 +74,9 @@
     <Content Include="css\styles.css" />
     <Content Include="Entertainment.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="images\86278083_119326919628729_2649668502901751808_n.jpg" />
+    <Content Include="images\89266863_129099195318168_4178961947321958400_n.jpg" />
+    <Content Include="images\90075965_133247708236650_23976831023579136_n.jpg" />
     <Content Include="js\JavaScript.js" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
@@ -157,9 +160,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="images\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
